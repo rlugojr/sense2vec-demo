@@ -1,0 +1,27 @@
+//- ----------------------------------
+//- 💥 DEMOS > SENSE2VEC
+//- ----------------------------------
+
+include _mixins
+
+header.o-banner
+    h1.u-heading-1=title
+    p.o-block.u-text-medium Our neural network read every comment posted to Reddit in 2015, and built a semantic map using word2vec and spaCy. Try searching for #[a(href="?word=fair%20game") a phrase] that's more than the sum of its parts to see what the model thinks it means. Try your #[a(href="?pink%20floyd") favourite band], #[a(href="?word=dtf") slang words], #[a(href="?word=fourier%20transform") technical things], or something #[a(href="?word=👍") totally random].
+
+    .o-form
+        +input("Your term here...").u-text-large#input
+            +search#submit
+
+        +dropdown("radio", "sense", "Sense", { auto: "auto", ADJ: "ADJ", ADP: "ADP", ADV: "ADV", AUX: "AUX", CONJ: "CONJ", DET: "DET", INTJ: "INTJ", NOUN: "NOUN", NUM: "NUM", PART: "PART", PRON: "PRON", PROPN: "PROPN", PUNCT: "PUNCT", SCONJ: "SCONJ", SYM: "SYM", VERB: "VERB", XVERB: "XVERB", NORP: "NORP", FACILITY: "FACILITY", ORG: "ORG", GPE: "GPE", LOC: "LOC", PRODUCT: "PRODUCT", EVENT: "EVENT", WORK_OF_ART: "WORK OF ART", LANGUAGE: "LANGUAGE" }, "auto")
+
+.o-container#sense2vec
+
+footer.o-banner
+    h2.u-heading-2 How does this work?
+
+    p.o-block.u-text-medium We used #[a(href="https://spacy.io" target="_blank") spaCy] to tag and parse every comment posted to Reddit in 2015, and fed the results to Gensim's word2vec implementation. Using the search above, you can get a lot of interesting insights into the Reddit hivemind. See what spaCy and Gensim think Reddit thinks about almost anything.
+
+    .o-block
+        a.o-button.u-label(href=readmore target="_blank") Read the blog post
+
++error("Oops, something went wrong. Please try again!")

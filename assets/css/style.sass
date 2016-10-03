@@ -1,0 +1,56 @@
+//- ----------------------------------
+//- 💥 DEMOS > SENSE2VEC
+//- ----------------------------------
+
+//- Variables
+
+$theme-bg: #e4514f
+$theme-bg2: desaturate(darken($theme-bg, 5), 10)
+$theme-color: #fff
+$color-error: $theme-bg2
+
+
+//- Imports
+
+@import base
+@import ui
+
+
+//- Container
+
+.o-container
+    padding: 0.5rem 0 3rem 0
+    min-height: 50vh
+
+
+//- Sense2vec
+
+.sense2vec-result
+    display: flex
+    align-items: center
+    justify-content: space-between
+    font: normal normal 1.875rem/#{1} $font-primary
+    padding: 1.5rem 4rem
+
+    &:not(:last-child)
+        border-bottom: 1px solid $color-subtle
+
+.sense2vec-word
+    flex: 1
+    cursor: pointer
+
+    &:after
+        @include size(1.5rem)
+        display: inline-block
+        content: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIj48cGF0aCBkPSJNOS4xNjMgNC41MTZjLjQxOC40MDggNC41MDIgNC42OTUgNC41MDIgNC42OTUuMjIzLjIyLjMzNS41MDUuMzM1Ljc5cy0uMTEyLjU3LS4zMzUuNzg3YzAgMC00LjA4NCA0LjI5LTQuNTAyIDQuNjk1LS40MTguNDA4LTEuMTcuNDM2LTEuNjE1IDAtLjQ0Ni0uNDM0LS40OC0xLjA0IDAtMS41NzRMMTEuMjk1IDEwIDcuNTQ4IDYuMDkyYy0uNDgtLjUzMy0uNDQ2LTEuMTQgMC0xLjU3NnMxLjE5Ny0uNDEgMS42MTUgMHoiLz48L3N2Zz4=)
+        vertical-align: middle
+        margin-left: 1rem
+        opacity: 0.15
+        transition: all 0.5s ease
+
+    &:hover:after
+        opacity: 0.75
+        transform: translateX(0.5rem)
+
+.sense2vec-score
+    font-weight: bold
