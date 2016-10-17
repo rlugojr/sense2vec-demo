@@ -11,6 +11,7 @@ This demo is implemented in [Jade (aka Pug)](https://www.jade-lang.org), an exte
 ```bash
 sudo npm install --global harp
 git clone https://github.com/explosion/sense2vec-demo
+cd sense2vec-demo
 harp server
 ```
 
